@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
         mItent.add(Intent(this, SportActivity::class.java))
         mItent.add(Intent(this, HomeActivity::class.java))
         mItent.add(Intent(this, MainActivity::class.java))
-        mItent.add(Intent(this, SportActivity::class.java))
+        mItent.add(Intent(this, FollowupActivity::class.java))
 
         recyclerView.layoutManager= LinearLayoutManager(this, HORIZONTAL, false)
         recyclerView.adapter = MenuAdapter(choix, mImage, mItent, ::onDeviceClicked)
