@@ -38,7 +38,6 @@ class MenuAdapter(
         val title: TextView = itemView.menu_button
         val image: ImageView = itemView.image_button
         var menuCell = itemView.menucell
-
     }
 
 }
