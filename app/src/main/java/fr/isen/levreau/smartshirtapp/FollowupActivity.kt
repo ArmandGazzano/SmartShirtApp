@@ -57,8 +57,6 @@ class FollowupActivity : AppCompatActivity() {
             val mBarre: ArrayList<Int> = ArrayList()
             mBarre.add(R.drawable.barregrande)
             mBarre.add(R.drawable.barremoyenne)
-            mBarre.add(R.drawable.barrepetite)
-            mBarre.add(R.drawable.barrettpetite)
 
             recycler_evolution.layoutManager= LinearLayoutManager(this,  HORIZONTAL, false)
             recycler_evolution.adapter = EvolutionAdapter(post, mBarre)
