@@ -46,7 +46,7 @@ class SeanceAdapter(
         }
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nbSeance: TextView = itemView.num_seance
         val expendableLayout: ConstraintLayout = itemView.expandableLayout
         val fleche: ImageView = itemView.fleche_button

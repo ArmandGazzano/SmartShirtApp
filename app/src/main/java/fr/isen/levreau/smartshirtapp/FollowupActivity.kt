@@ -1,9 +1,11 @@
 package fr.isen.levreau.smartshirtapp
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.OrientationHelper.HORIZONTAL
 import kotlinx.android.synthetic.main.activity_followup.*
 
 class FollowupActivity : AppCompatActivity() {
@@ -14,6 +16,7 @@ class FollowupActivity : AppCompatActivity() {
     val epG : ArrayList<String> = ArrayList()
     val epD : ArrayList<String> = ArrayList()
 
+    @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_followup)
@@ -33,6 +36,8 @@ class FollowupActivity : AppCompatActivity() {
             recycler_seance.layoutManager= LinearLayoutManager(this)
             recycler_seance.adapter = SeanceAdapter(nseance,hautDos,basDos,centreDos,epG,epD)
             recycler_seance.visibility = View.VISIBLE
+
+            recycler_evolution.visibility = View.INVISIBLE
         }
 
         evolution_button.setOnClickListener(){
@@ -40,6 +45,24 @@ class FollowupActivity : AppCompatActivity() {
             seance_button.setBackgroundResource(R.color.colorUnpressed)
 
             recycler_seance.visibility = View.INVISIBLE
+
+            val post: ArrayList<String> = ArrayList()
+
+            post.add("Haut du dos")
+            post.add("Centre du dos")
+            post.add("Bas du dos")
+            post.add("Epaule gauche")
+            post.add("Epaule droite ")
+
+            val mBarre: ArrayList<Int> = ArrayList()
+            mBarre.add(R.drawable.barregrande)
+            mBarre.add(R.drawable.barremoyenne)
+            mBarre.add(R.drawable.barrepetite)
+            mBarre.add(R.drawable.barrettpetite)
+
+            recycler_evolution.layoutManager= LinearLayoutManager(this,  HORIZONTAL, false)
+            recycler_evolution.adapter = EvolutionAdapter(post, mBarre)
+            recycler_evolution.visibility = View.VISIBLE
         }
     }
 
