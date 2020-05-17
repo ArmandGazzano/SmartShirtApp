@@ -26,6 +26,9 @@ class FollowupActivity : AppCompatActivity() {
             evolution_button.setBackgroundResource(R.color.colorUnpressed)
             seance_button.setBackgroundResource(R.color.colorPressed)
 
+
+            txt_evolution.visibility = View.INVISIBLE
+
             val nseance : ArrayList<String> = ArrayList()
             for (i in 1..10){
                 nseance.add("$i")
@@ -45,6 +48,7 @@ class FollowupActivity : AppCompatActivity() {
             seance_button.setBackgroundResource(R.color.colorUnpressed)
 
             recycler_seance.visibility = View.INVISIBLE
+            txt_evolution.visibility = View.VISIBLE
 
             val post: ArrayList<String> = ArrayList()
 
@@ -52,15 +56,20 @@ class FollowupActivity : AppCompatActivity() {
             post.add("Centre du dos")
             post.add("Bas du dos")
             post.add("Epaule gauche")
-            post.add("Epaule droite ")
+            post.add("Epaule droite")
 
             val mBarre: ArrayList<Int> = ArrayList()
             mBarre.add(R.drawable.barregrande)
             mBarre.add(R.drawable.barremoyenne)
+            mBarre.add(R.drawable.barrepetite)
+            mBarre.add(R.drawable.barrettpetite)
+
+            initDonnees()
 
             recycler_evolution.layoutManager= LinearLayoutManager(this,  HORIZONTAL, false)
-            recycler_evolution.adapter = EvolutionAdapter(post, mBarre)
+            recycler_evolution.adapter = EvolutionAdapter(post,mBarre,hautDos,basDos,centreDos,epG,epD)
             recycler_evolution.visibility = View.VISIBLE
+
         }
     }
 

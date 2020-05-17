@@ -17,8 +17,7 @@ class SeanceAdapter(
     val centreDos: ArrayList<String>,
     val epG: ArrayList<String>,
     val epD: ArrayList<String>
-):
-    RecyclerView.Adapter<SeanceAdapter.ViewHolder>() {
+): RecyclerView.Adapter<SeanceAdapter.ViewHolder>() {
     var maxDanger: String = ""
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
@@ -35,7 +34,9 @@ class SeanceAdapter(
             if (holder.expendableLayout.visibility == View.GONE)
             holder.expendableLayout.visibility=View.VISIBLE
             else holder.expendableLayout.visibility=View.GONE
+
             compareDonnees(position)
+
             holder.tendance.text = maxDanger
             holder.nbHdos.text = hautDos[position]
             holder.nbBdos.text = basDos[position]
