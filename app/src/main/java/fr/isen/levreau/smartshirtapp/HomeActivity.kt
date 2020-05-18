@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
         choix.add("Nouvelle séance")
         choix.add("Calibration")
         choix.add("Suivi")
-        choix.add("Réglages")
+        choix.add("Compte")
 
         val mImage: ArrayList<Int> = ArrayList()
         mImage.add(R.drawable.sport)
@@ -31,9 +31,9 @@ class HomeActivity : AppCompatActivity() {
         mImage.add(R.drawable.settings)
 
         mItent.add(Intent(this, SportActivity::class.java))
-        mItent.add(Intent(this, HomeActivity::class.java))
+        mItent.add(Intent(this, CalibrationActivity::class.java))
         mItent.add(Intent(this, FollowupActivity::class.java))
-        mItent.add(Intent(this, MainActivity::class.java))
+        mItent.add(Intent(this, CompoteActivity::class.java))
 
         recyclerView.layoutManager= LinearLayoutManager(this, HORIZONTAL, false)
         recyclerView.adapter = MenuAdapter(choix, mImage, mItent, ::onDeviceClicked)

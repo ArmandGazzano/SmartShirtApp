@@ -17,7 +17,7 @@ class SportActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sport)
 
-      /*  bas_rouge.visibility = View.INVISIBLE
+       bas_rouge.visibility = View.INVISIBLE
         milieu_rouge.visibility = View.INVISIBLE
         haut_rouge.visibility = View.INVISIBLE
         ep_d_rouge.visibility = View.INVISIBLE
@@ -26,7 +26,7 @@ class SportActivity : AppCompatActivity() {
 
         start.setOnClickListener {
             readFromFile()
-        }*/
+        }
     }
 
     private fun readFromFile(){

@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FollowupActivity"></activity>
+        <activity android:name=".CalibrationActivity"></activity>
+        <activity android:name=".CompoteActivity" />
+        <activity android:name=".FollowupActivity" />
         <activity android:name=".SportActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".InscriptionActivity" />
@@ -25,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegaleActivity" />
     </application>
 
 </manifest>
