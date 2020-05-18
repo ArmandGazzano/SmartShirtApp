@@ -1,5 +1,6 @@
 package fr.isen.levreau.smartshirtapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -39,6 +40,10 @@ class CalibrationActivity : AppCompatActivity() {
 
             }
         }
+
+        return_button.setOnClickListener {
+            goBack()
+        }
         /*
         if (calculCalibration()) {
             valider.visibility=View.VISIBLE
@@ -55,6 +60,13 @@ class CalibrationActivity : AppCompatActivity() {
         return true
     }
     */
+    }
+
+    private fun goBack() {
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
     }
 
 }

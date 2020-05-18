@@ -1,5 +1,6 @@
 package fr.isen.levreau.smartshirtapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
@@ -27,6 +28,17 @@ class SportActivity : AppCompatActivity() {
         start.setOnClickListener {
             readFromFile()
         }
+
+        return_button.setOnClickListener {
+            goBack()
+        }
+    }
+
+    private fun goBack() {
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
     }
 
     private fun readFromFile(){
